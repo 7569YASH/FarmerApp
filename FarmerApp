@@ -1,0 +1,64 @@
+package javaproject;
+
+import java.util.Scanner;
+
+class Farmer
+{
+    private float p;
+    private float t;
+    static float r;
+    private float si;
+    
+    static{
+        r=2.5f;
+    }
+    void acceptInput()
+    {
+        Scanner scan= new Scanner(System.in);
+        System.out.println("Enter the principle amount");
+           p= scan.nextFloat();
+        System.out.println("Enter the time duration");
+           t= scan.nextFloat();
+    }
+    void compute()
+    {
+        si = (p*t*r)/100;
+    }
+    void dispInterest()
+    {
+        System.out.println(si);
+    }
+    static void dispEligCrit()
+    {
+        System.out.println("The age must be between 18 Years & 70Years");
+    }
+    
+}
+class FarmerApp
+{
+    public static void main(String []args)
+    {
+        Farmer.dispEligCrit();
+        Farmer f1 =new Farmer();
+        Farmer f2 =new Farmer();
+        Farmer f3 =new Farmer();
+        
+        
+        f1.acceptInput();
+        f1.compute();
+        f1.dispInterest();
+        
+        
+        f2.acceptInput();
+        f2.compute();
+        f2.dispInterest();
+        
+       
+        f3.acceptInput();
+        f3.compute();
+        f3.dispInterest();
+       
+        
+    }
+}
+
